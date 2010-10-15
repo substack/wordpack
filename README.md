@@ -25,6 +25,21 @@ Examples
                                           
     1. platypus, duckbill, duckbilled platypus, duck-billed platypus, Ornithorhynchus anatinus -- (small densely furred aquatic monotreme of Australia and Tasmania having a broad bill and tail and webbed feet; only species in the family Ornithorhynchidae)
 
+-
+     $ syns fortified
+    
+    Similarity of adj fortified
+    
+    2 senses of fortified                                                   
+    
+    Sense 1
+    bastioned, fortified
+           => protected (vs. unprotected)
+    
+    Sense 2
+    fortified
+           => strong (vs. weak)
+
 Installation
 ============
 
