@@ -1,0 +1,2 @@
+#!/bin/bash
+for x in n v a r; do wordnet "$*" -ants$x; done
