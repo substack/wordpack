@@ -28,7 +28,7 @@ Examples
 Installation
 ============
 
-    sudo aptitude install wordnet
+    sudo aptitude install wordnet aspell
     git clone http://github.com/substack/wordpack.git
     cd wordpack
     ./install.sh $PREFIX
