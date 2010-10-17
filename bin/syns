@@ -1,2 +1,2 @@
 #!/bin/bash
-for x in n v a r; do wordnet "$*" -syns$x; done
+for x in n v a r; do wn "$*" -syns$x; done

@@ -3,12 +3,12 @@ use warnings;
 use strict;
 
 for my $word ((join " ", @ARGV) =~ m/([\w'-]+)/g) {
-    system 'wordnet', $word, '-over' or do {
+    system 'wn', $word, '-over' or do {
         my @words = (join "",
             (qx/asp "$word"/ =~ m/^ &.+?: \s* (.+) $/mx)
         ) =~ m/([^\s,]+)/g
             or "No idea what '$word' means" and next;
         print "Suggestions: ", (join " | ", @words), "\n";
-        system 'wordnet', $words[0], '-over';
+        system 'wn', $words[0], '-over';
     }
 }
