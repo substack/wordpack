@@ -2,13 +2,17 @@
 use warnings;
 use strict;
 
-for my $word ((join " ", @ARGV) =~ m/([\w'-]+)/g) {
-    system 'wn', $word, '-over' or do {
-        my @words = (join "",
-            (qx/asp "$word"/ =~ m/^ &.+?: \s* (.+) $/mx)
-        ) =~ m/([^\s,]+)/g
-            or "No idea what '$word' means" and next;
-        print "Suggestions: ", (join " | ", @words), "\n";
-        system 'wn', $words[0], '-over';
+if ($ARGV[0] eq "--help") {
+    print "wo <word1> <word2> ... <wordn>: Defines your words!\n";
+} else {
+    for my $word ((join " ", @ARGV) =~ m/([\w'-]+)/g) {
+        system 'wn', $word, '-over' or do {
+            my @words = (join "",
+                (qx/asp "$word"/ =~ m/^ &.+?: \s* (.+) $/mx)
+            ) =~ m/([^\s,]+)/g
+                or "No idea what '$word' means" and next;
+            print "Suggestions: ", (join " | ", @words), "\n";
+            system 'wn', $words[0], '-over';
+        }
     }
 }
