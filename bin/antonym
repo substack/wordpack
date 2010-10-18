@@ -1,2 +1,8 @@
 #!/bin/bash
-for x in n v a r; do wn "$*" -ants$x; done
+if [ "$1" == '--help' ]; then
+    echo "    ants <word1> <word2> ... <wordn>:"
+    echo ""
+    echo "    Returns antonyms for passed words."
+else
+    for x in n v a r; do wn "$*" -ants$x; done
+fi
