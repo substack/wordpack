@@ -1,2 +1,6 @@
 #!/bin/bash
-for x in n v a r; do wn "$*" -syns$x; done
+if [ "$1" == '--help' ]; then
+    echo "syns <word1> <word2> ... <wordn>: Returns synonyms for passed words."
+else
+    for x in n v a r; do wn "$*" -syns$x; done
+fi
