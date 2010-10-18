@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ "$1" == '--help' ]; then
-    echo "ants <word1> <word2> ... <wordn>: Returns antonyms for passed words."
+if [ "$1" == '--help' -o "$1" == '-h' -o "$1" == '' ]; then
+    echo "ants <word>: prints antonyms"
 else
     for x in n v a r; do wn "$*" -ants$x; done
 fi
